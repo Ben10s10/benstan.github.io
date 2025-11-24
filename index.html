@@ -377,6 +377,22 @@ footer span {
     );
   }
 }
+    @media (max-width: 768px) {
+  body {
+    background:
+      radial-gradient(circle at top,
+        rgba(0,0,0,0.55) 0%,
+        rgba(0,0,0,0.75) 50%,
+        rgba(0,0,0,0.9) 100%
+      ),
+      url("stars_background.webp") no-repeat top center / cover;
+    background-attachment: scroll;
+  }
+
+  #starfield {
+    opacity: 0.25; /* mobile performance boost */
+  }
+}
   </style>
   
 </head>
@@ -413,6 +429,7 @@ footer span {
 
 </body>
 </html>
+
 
 
 
