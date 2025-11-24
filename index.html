@@ -167,6 +167,141 @@
       background: linear-gradient(135deg, rgba(15,23,42,.9), rgba(30,64,175,.85));
       padding: 18px 16px; border-radius: 18px;
     }
+    .card {
+  background: linear-gradient(145deg, #020617, #020617, #020617);
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--border);
+  padding: 18px 18px 16px;
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.4);
+}
+
+.card + .card {
+  margin-top: 12px;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  margin-bottom: 6px;
+}
+
+.card-title {
+  font-size: 0.96rem;
+  font-weight: 550;
+}
+
+.card-meta {
+  font-size: 0.78rem;
+  color: var(--muted);
+}
+
+.card-body {
+  font-size: 0.88rem;
+  color: #e5e7eb;
+}
+
+.card-body p + p {
+  margin-top: 6px;
+}
+
+.pill-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 8px;
+}
+
+.pill-small {
+  font-size: 0.72rem;
+  padding: 3px 8px;
+  border-radius: 999px;
+  background: rgba(15,23,42,0.9);
+  border: 1px solid rgba(148,163,184,0.5);
+  color: var(--muted);
+}
+    .hero-metrics {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.metric {
+  flex: 1 1 110px;
+  border-radius: var(--radius-lg);
+  background: rgba(15, 23, 42, 0.9);
+  border: 1px solid rgba(148,163,184,0.4);
+  padding: 10px 11px;
+}
+
+.metric-label {
+  font-size: 0.7rem;
+  color: var(--muted);
+  margin-bottom: 3px;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+}
+
+.metric-value {
+  font-size: 0.96rem;
+  font-weight: 600;
+}
+    .skills-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.skills-column h4 {
+  font-size: 0.85rem;
+  margin-bottom: 4px;
+  color: #e5e7eb;
+}
+
+.skills-column ul {
+  list-style: none;
+  font-size: 0.82rem;
+  color: var(--muted);
+}
+
+.skills-column li + li {
+  margin-top: 2px;
+}
+.contact-text {
+  font-size: 0.9rem;
+  color: var(--muted);
+  margin-bottom: 12px;
+}
+
+.contact-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  font-size: 0.86rem;
+}
+
+.contact-row a {
+  color: #c4b5fd;
+  text-decoration: underline;
+  text-decoration-style: dotted;
+}
+footer {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 20px 28px;
+  font-size: 0.75rem;
+  color: var(--muted);
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+footer span {
+  opacity: 0.8;
+}
   </style>
 </head>
 
@@ -202,3 +337,4 @@
 
 </body>
 </html>
+
