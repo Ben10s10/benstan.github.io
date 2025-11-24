@@ -345,7 +345,24 @@ footer span {
         gap: 6px;
       }
     }
+    /* MOBILE FIX — CLEAN SKILLS LAYOUT */
+@media (max-width: 768px) {
+  .skills-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .skills-column h4 {
+    margin-bottom: 8px;
+  }
+
+  .skills-column ul {
+    margin-top: 0;
+  }
+}
   </style>
+  
 </head>
 
 <body>
@@ -380,5 +397,6 @@ footer span {
 
 </body>
 </html>
+
 
 
