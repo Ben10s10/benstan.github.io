@@ -361,6 +361,22 @@ footer span {
     margin-top: 0;
   }
 }
+    /* Fix stretched blurry background on mobile */
+@media (max-width: 768px) {
+  body {
+    background-attachment: scroll; /* removes the forced zoom */
+    background-size: contain;      /* keeps the whole image visible */
+    background-repeat: no-repeat;
+    background-position: top center;
+  }
+
+  body::after {
+    background: radial-gradient(circle at center,
+      rgba(0,0,0,0) 30%,
+      rgba(0,0,0,0.5) 90%
+    );
+  }
+}
   </style>
   
 </head>
@@ -397,6 +413,7 @@ footer span {
 
 </body>
 </html>
+
 
 
 
