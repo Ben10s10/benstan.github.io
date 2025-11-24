@@ -302,6 +302,49 @@ footer {
 footer span {
   opacity: 0.8;
 }
+        /* ————————————————————————————
+       MOBILE FIXES
+       ———————————————————————————— */
+    @media (max-width: 768px) {
+
+      body {
+        background-attachment: scroll; /* mobile-safe */
+        background-size: cover;
+        background-position: center top;
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
+      .grid-2 {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
+      .hero-heading {
+        font-size: 1.8rem;
+      }
+
+      main {
+        padding: 20px 16px 48px;
+      }
+
+      #starfield {
+        opacity: 0.45; /* brighter on mobile */
+      }
+
+      .star {
+        animation-duration: 14s; /* slow them down slightly */
+      }
+
+      footer {
+        text-align: center;
+        flex-direction: column;
+        gap: 6px;
+      }
+    }
   </style>
 </head>
 
@@ -337,4 +380,5 @@ footer span {
 
 </body>
 </html>
+
 
