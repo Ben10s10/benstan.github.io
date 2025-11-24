@@ -22,18 +22,17 @@
       --shadow-soft: 0 18px 40px rgba(0, 0, 0, 0.4);
       --max-width: 1080px;
     }
+    /* Animated starfield (Option 1) */
+@keyframes starScroll {
+  from { background-position: 0 0; }
+  to { background-position: 0 800px; }
+}
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
+body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
     "Segoe UI", sans-serif;
 
-  background: 
+  background:
     radial-gradient(circle at top, rgba(17, 24, 39, 0.7) 0, rgba(2, 6, 23, 0.8) 50%, #000 100%),
     url("stars_background.webp");
 
@@ -42,10 +41,17 @@
   background-position: center;
   background-repeat: no-repeat;
 
+  animation: starScroll 40s linear infinite;
+
   color: var(--text);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
 }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
     a {
       color: inherit;
@@ -736,6 +742,7 @@
 </body>
 
 </html>
+
 
 
 
