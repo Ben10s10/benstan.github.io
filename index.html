@@ -32,11 +32,16 @@
     body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
     "Segoe UI", sans-serif;
-  
-  background:
-    linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.9)),
-    url("stars_background.webp") center/cover no-repeat fixed;
-  
+
+  background: 
+    radial-gradient(circle at top, rgba(17, 24, 39, 0.7) 0, rgba(2, 6, 23, 0.8) 50%, #000 100%),
+    url("stars_background.webp");
+
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+
   color: var(--text);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
@@ -731,5 +736,6 @@
 </body>
 
 </html>
+
 
 
