@@ -222,6 +222,50 @@ body::after {
   box-shadow: 0 0 4px rgba(255,255,255,0.8);
   filter: brightness(1.7);
 }
+    /* ————————————————————————————
+   STARFIELD FIX — use photo + animated stars
+   ———————————————————————————— */
+
+/* Make background photo darker for readability */
+body {
+  background:
+    radial-gradient(circle at top,
+      rgba(0, 0, 0, 0.55) 0%,
+      rgba(0, 0, 0, 0.75) 50%,
+      rgba(0, 0, 0, 0.9) 100%
+    ),
+    url("stars_background.webp");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+/* The animated stars layer */
+#starfield {
+  position: fixed;
+  inset: 0;
+  z-index: -1; /* behind content, above photo */
+  pointer-events: none;
+  overflow: hidden;
+
+  /* Fade the layer so your real stars remain visible */
+  opacity: 0.35;
+}
+
+/* Individual star dots */
+.star {
+  width: 2px;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 50%;
+  animation: drift linear infinite;
+  filter: blur(0.5px); /* soft edges */
+}
+
+@keyframes drift {
+  from { transform: translateY(0); }
+  to   { transform: translateY(1800px); }
+}
   </style>
 </head>
 <body>
@@ -261,6 +305,7 @@ makeStars();
 </script>
 </body>
 </html>
+
 
 
 
