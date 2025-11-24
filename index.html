@@ -192,7 +192,36 @@ body {
     .hero-card p { font-size: 0.85rem; color: var(--muted); margin-bottom: 10px; }
 
     /* ... (your other CSS remains unchanged) ... */
+    /* ————————————————————————————
+   STARFIELD VISIBILITY BOOST
+   ———————————————————————————— */
 
+/* Make your real astrophotography photo darker so moving stars stand out */
+body {
+  background-blend-mode: darken;
+  filter: brightness(0.8) contrast(1.15);
+}
+
+/* Slight vignette around edges */
+body::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -1;
+  background: radial-gradient(circle at center,
+      rgba(0,0,0,0) 55%,
+      rgba(0,0,0,0.45) 100%);
+}
+
+/* Make drifting stars slightly brighter/larger */
+.star {
+  box-shadow: 0 0 4px rgba(255,255,255,0.8);
+  filter: brightness(1.7);
+}
   </style>
 </head>
 <body>
@@ -232,5 +261,6 @@ makeStars();
 </script>
 </body>
 </html>
+
 
 
