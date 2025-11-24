@@ -32,41 +32,44 @@
     }
 
     #starfield {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: -2;
-      pointer-events: none;
-      overflow: hidden;
-      background: black;
-    }
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -2;          /* behind everything */
+  pointer-events: none;
+  overflow: hidden;
+}
 
-    .star {
-      position: absolute;
-      width: 2px;
-      height: 2px;
-      background: white;
-      border-radius: 50%;
-      opacity: 0.8;
-      animation: drift 12s linear infinite;
-    }
+.star {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: white;
+  border-radius: 50%;
+  opacity: 0.9;
+  animation: drift linear infinite;
+}
 
-    body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif;
-      background:
-        radial-gradient(circle at top, rgba(17, 24, 39, 0.7) 0, rgba(2, 6, 23, 0.8) 50%, #000 100%),
-        url("stars_background.webp");
-      background-size: cover;
-      background-attachment: fixed;
-      background-position: center;
-      color: var(--text);
-      line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
-      margin: 0;
-      padding: 0;
-    }
+@keyframes drift {
+  from { transform: translateY(0); }
+  to   { transform: translateY(1800px); }
+}
+
+/* Keep your original static image */
+body {
+  background:
+    radial-gradient(circle at top,
+      rgba(17,24,39,0.7) 0%,
+      rgba(2,6,23,0.8) 50%,
+      #000 100%
+    ),
+    url("stars_background.webp");
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+}
 
     * {
       box-sizing: border-box;
@@ -205,22 +208,29 @@
   </footer>
 
   <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
+const field = document.getElementById("starfield");
 
-    // Generate moving stars
-    const field = document.getElementById("starfield");
+function makeStars() {
+  for (let i = 0; i < 200; i++) {
+    const s = document.createElement("div");
+    s.className = "star";
 
-    for (let i = 0; i < 200; i++) {
-      const s = document.createElement("div");
-      s.className = "star";
-      s.style.left = Math.random() * window.innerWidth + "px";
-      s.style.top = Math.random() * window.innerHeight + "px";
-      s.style.opacity = Math.random() * 0.8 + 0.2;
-      s.style.transform = `scale(${Math.random() * 1.5 + 0.5})`;
-      s.style.animationDuration = (Math.random() * 15 + 8) + "s";
-      field.appendChild(s);
-    }
-  </script>
+    s.style.left = Math.random() * window.innerWidth + "px";
+    s.style.top = Math.random() * window.innerHeight + "px";
+    s.style.opacity = (Math.random() * 0.8 + 0.2).toFixed(2);
+
+    const scale = (Math.random() * 1.5 + 0.5).toFixed(2);
+    s.style.transform = `scale(${scale})`;
+
+    s.style.animationDuration = (Math.random() * 12 + 10) + "s";
+
+    field.appendChild(s);
+  }
+}
+
+makeStars();
+</script>
 </body>
 </html>
+
 
